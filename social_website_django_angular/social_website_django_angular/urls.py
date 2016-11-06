@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from social_website_django_angular.views import IndexView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url('^.*$', IndexView.as_view(), name='index')
 ]
