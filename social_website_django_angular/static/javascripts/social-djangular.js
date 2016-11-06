@@ -1,2 +1,2 @@
 angular
-  .module('thinkster', []);
+  .module('social-djangular', []);
