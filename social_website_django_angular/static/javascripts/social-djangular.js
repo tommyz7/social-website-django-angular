@@ -1,2 +1,2 @@
 angular
-  .module('social-djangular', []);
+  .module('social_djangular', []);
