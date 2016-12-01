@@ -12,6 +12,10 @@
 			controller: 'RegisterController',
 			controllerAs: 'regCtl',
 			templateUrl: 'static/templates/authentication/register.html'
+		}).when('/login', {
+		    controller: 'LoginController',
+		    controllerAs: 'loginCtl',
+		    templateUrl: 'static/templates/authentication/login.html'
 		}).otherwise('/');
 	}
 })();
