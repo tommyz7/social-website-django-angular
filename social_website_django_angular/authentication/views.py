@@ -5,6 +5,7 @@ from rest_framework import permissions, status, viewsets
 
 from .models import Account
 from .serializers import AccountSerializer
+from .permissions import IsAccountOwner
 
 
 class AccountViewSet(viewsets.ModelViewSet):
