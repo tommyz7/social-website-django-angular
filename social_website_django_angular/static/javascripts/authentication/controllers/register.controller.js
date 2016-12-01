@@ -8,11 +8,18 @@
 	RegisterController.$inject = ['$location', '$scope', 'Authentication'];
 
 	function RegisterController($location, $scope, Authentication){
-		var regCrl;
-		regCrl = this;
+		var regCrl = this;
 		regCrl.register = register;
+
+		activate();
+
+		function activate(){
+		    if (Authentication.isAuthenticated()){
+		        $location.url('/');
+		    }
+		}
 		function register(){
-			Authentication.register(regCrl.email, regCrl.password, regCrl.username);
+			return Authentication.register(regCrl.email, regCrl.password, regCrl.username);
 		}
 	}
 })();

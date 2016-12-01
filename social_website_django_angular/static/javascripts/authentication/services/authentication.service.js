@@ -57,11 +57,19 @@
         }
 
 		function register(email, password, username){
-			$http.post('/api/v1/accounts', {
+			$http.post('/api/v1/accounts/', {
 				email: email,
 				password: password,
 				username: username
-			});
+			}).then(registerSuccessFn, registerErrorFn);
+
+			function registerSuccessFn(data, status, headers, config){
+			    Authentication.login(email, password);
+			}
+
+			function registerErrorFn(data, status, headers, config){
+			    console.log('registerErrorFn');
+			}
 		}
 	}
 })();
