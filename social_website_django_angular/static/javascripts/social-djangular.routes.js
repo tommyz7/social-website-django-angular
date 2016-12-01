@@ -10,7 +10,7 @@
 	function config($routeProvider){
 		$routeProvider.when('/register', {
 			controller: 'RegisterController',
-			controllerAs: 'RegCtl',
+			controllerAs: 'regCtl',
 			templateUrl: 'static/templates/authentication/register.html'
 		}).otherwise('/');
 	}
