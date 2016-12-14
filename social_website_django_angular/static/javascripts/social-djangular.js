@@ -2,7 +2,8 @@ angular
 	.module('social_djangular', [
 		'social_djangular.config',
 		'social_djangular.routes',
-		'social_djangular.authentication'
+		'social_djangular.authentication',
+		'social_djangular.layout'
 	]);
 
 angular
