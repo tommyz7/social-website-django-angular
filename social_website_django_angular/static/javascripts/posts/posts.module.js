@@ -10,7 +10,7 @@
         ]);
 
     angular.module('social_djangular.posts.services', []);
-    angular.module('social_djangular.posts.directives', []);
+    angular.module('social_djangular.posts.directives', ['ngDialog']);
     angular.module('social_djangular.post.directives', []);
     angular.module('social_djangular.posts.controller', []);
 })();

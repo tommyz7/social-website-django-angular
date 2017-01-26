@@ -5,14 +5,15 @@
         .module('social_djangular.layout.controllers')
         .controller('IndexController', IndexController);
 
-    IndexController.$inject = ['$scope', 'Authentication', 'Posts', 'Snackbar'];
+    IndexController.$inject = ['$scope', 'Authentication', 'Posts', 'Snackbar', 'ngDialog'];
 
 
-    function IndexController($scope, Authentication, Posts, Snackbar) {
+    function IndexController($scope, Authentication, Posts, Snackbar, ngDialog) {
         var index_ctl = this;
 
         index_ctl.isAuthenticated = Authentication.isAuthenticated();
         index_ctl.posts = [];
+        index_ctl.openDialog = openDialog;
 
         activate();
 
@@ -34,6 +35,13 @@
             function postsErrorFn(data, status, headers, config) {
                 Snackbar.error(data.error);
             }
+        }
+
+        function openDialog(){
+            ngDialog.open({
+                template: '/static/templates/posts/new-post.html',
+                controller: 'NewPostController as newPostCtl'
+            });
         }
 
     }

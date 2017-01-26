@@ -68,7 +68,6 @@
 
         function render(current, original) {
             if (current !== original) {
-                console.log(current);
                 postsCtl.columns = [];
 
                 for (var i = 0; i < calculateNumberOfColumns(); ++i) {
@@ -77,10 +76,8 @@
 
                 for (var i = 0; i < current.length; ++i) {
                     var column = approximateShortestColumn();
-                    console.log(column);
                     postsCtl.columns[column].push(current[i]);
                 }
-                console.log(postsCtl.columns[0]);
 
             }
         }
