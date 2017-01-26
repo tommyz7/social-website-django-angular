@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'core',
     'authentication',
     'rest_framework',
+    'posts',
 ]
 
 MIDDLEWARE = [

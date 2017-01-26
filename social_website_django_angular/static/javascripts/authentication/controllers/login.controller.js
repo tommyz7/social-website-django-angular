@@ -4,7 +4,6 @@
     angular
         .module('social_djangular.authentication.controllers')
         .controller('LoginController', LoginController);
-
     LoginController.$inject = ['$location', '$scope', 'Authentication'];
     function LoginController($location, $scope, Authentication){
         var loginCtl = this;

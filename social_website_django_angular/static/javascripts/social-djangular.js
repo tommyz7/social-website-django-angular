@@ -3,7 +3,9 @@ angular
 		'social_djangular.config',
 		'social_djangular.routes',
 		'social_djangular.authentication',
-		'social_djangular.layout'
+		'social_djangular.layout',
+		'social_djangular.posts',
+		'social_djangular.utils'
 	]);
 
 angular
