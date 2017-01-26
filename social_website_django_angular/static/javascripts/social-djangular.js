@@ -5,7 +5,8 @@ angular
 		'social_djangular.authentication',
 		'social_djangular.layout',
 		'social_djangular.posts',
-		'social_djangular.utils'
+		'social_djangular.utils',
+		'social_djangular.profiles'
 	]);
 
 angular

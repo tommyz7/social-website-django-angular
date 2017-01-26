@@ -1,0 +1,8 @@
+<div class="profile" ng-show="profileCtl.profile">
+    <div class="jumbotron profile__header">
+        <h1 class="profile__username">+{{ profileCtl.profile.username }}</h1>
+        <p class="profile__tagline">{{ profileCtl.profile.tagline }}</p>
+    </div>
+
+    <posts posts="profileCtl.posts"></posts>
+</div>

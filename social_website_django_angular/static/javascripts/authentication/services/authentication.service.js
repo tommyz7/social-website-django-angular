@@ -5,9 +5,9 @@
 		.module('social_djangular.authentication.services')
 		.factory('Authentication', Authentication);
 
-	Authentication.$inject = ['$cookies', '$http'];
+	Authentication.$inject = ['$cookies', '$http', 'Snackbar'];
 
-	function Authentication($cookies, $http){
+	function Authentication($cookies, $http, Snackbar){
 		var Authentication = {
 		    getAuthenticatedAccount: getAuthenticatedAccount,
 		    setAuthenticatedAccount: setAuthenticatedAccount,
@@ -38,6 +38,7 @@
 
 	    function unauthenticate(){
 	        delete $cookies.authenticatedAccount;
+	        $http.get('/admin/logout/');
 	    }
 
         function login(email, password){
@@ -53,7 +54,7 @@
             }
 
             function loginErrorFn(data, status, headers, config){
-                console.log('Login error.');
+                Snackbar.error('Login error.');
             }
         }
 
@@ -67,7 +68,7 @@
             }
 
             function logoutFailFn(data, status, headers, config){
-                console.log('logout unsuccessful');
+                Snackbar.error('logout unsuccessful');
             }
         }
 
@@ -83,7 +84,7 @@
 			}
 
 			function registerErrorFn(data, status, headers, config){
-			    console.log('registerErrorFn');
+			    Snackbar.error('registerErrorFn');
 			}
 		}
 	}
